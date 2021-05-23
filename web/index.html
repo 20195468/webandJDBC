@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Insert title here</title>
+</head>
+<body>
+<form name="myf" action="login" method="get">
+  账号:<input name="usercode" type="text"><br>
+  密码:<input name="userpwd" type="password"><br>
+  <input type="button" value="登录"  onclick="mySubmit()">
+  <input type="button" value="重置" onclick="myReset()">
+</form>
+
+<script>
+
+  function mySubmit(){
+    let usercode = myf.usercode.value;
+    let userpwd = myf.userpwd.value;
+
+    if(usercode===""){
+      alert('账号不能为空')
+      return;
+    }
+
+    if(userpwd===""){
+      alert("密码不能为空");
+      return;
+    }
+
+    myf.submit();
+
+  }
+
+  function myReset(){
+    myf.usercode.value = "";
+    myf.userpwd.value = "";
+    myf.usercode.focus();
+  }
+
+</script>
+</body>
+</html>
